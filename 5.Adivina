@@ -1,0 +1,34 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class AdivinaElNumero {
+    public static void main(String[] args) {
+        Random aleatorio = new Random();
+        /// Generar Número aleatorio
+        int numero = aleatorio.nextInt(10) + 1; // número entre 1 y 10
+        int intentos = 0;
+        int numeroIntroducido = 0;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println(" Intenta adivinar un número entre 1 y 10");
+
+        /// Bucle hasta acertar
+        do {
+            System.out.print("> ");
+            numeroIntroducido = sc.nextInt();
+            intentos++;
+
+            if (numeroIntroducido < numero) {
+                System.out.println("Te quedas corto ");
+            } else if (numeroIntroducido > numero) {
+                System.out.println("Te pasas ");
+            } else {
+                System.out.println("¡Correcto!  Has adivinado en " + intentos + " intentos.");
+            }
+
+        } while (numeroIntroducido != numero);
+
+        sc.close();
+    }
+}
