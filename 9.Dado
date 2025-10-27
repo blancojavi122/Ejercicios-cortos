@@ -1,0 +1,16 @@
+import java.util.Random;
+
+class Dado {
+
+    /// LANZAR DADO
+    static int lanzarDado() {
+        Random rand = new Random();
+        int resultado = rand.nextInt(6) + 1;
+        return resultado;
+    }
+    /// MOSTRAR RESULTADO
+    public static void main(String[] args) {
+        int tirada = lanzarDado();
+        System.out.println("Has sacado un " + tirada);
+    }
+}
