@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Pokemon {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int danho = 15;
+
+        /// PREGUNTAR PS POKEMON
+        System.out.print("¿Cuántos PS tiene tu pokemon y el de tu rival?");
+        System.out.println("PS Pokemon 1 >");
+        int PS1 = sc.nextInt();
+        System.out.println("PS Pokemon 2 >");
+        int PS2 = sc.nextInt();
+
+        ///  COMBATE
+        while (PS1 > 0 &&  PS2 > 0){
+            System.out.println("P1 ataca y causa :" + danho +  "de daño.");
+            PS2 -= danho;
+            if (PS2 <= 0) {
+                System.out.println("P2 ha sido derrotado");
+                break;
+            }
+
+            System.out.println("P2 ataca y causa :" + danho + "de daño.");
+            PS1 -= danho;
+            if (PS1 <=0) {
+                System.out.println("P2 ha sido derrotado.");
+                break;
+            }
+        } sc.close();
+    }
