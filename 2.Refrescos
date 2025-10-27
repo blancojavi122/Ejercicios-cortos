@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class refresco  {
+    static int calcularCambio (int saldo, int coste) {
+        return Math.max(1, saldo - coste);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        /// Refresco y saldo
+            System.out.println("Introduce tu saldo: ");
+            int saldo = scanner.nextInt();
+            System.out.print("Importe necesario para refresco: ");
+            int coste = scanner.nextInt();
+
+        /// Cálculo y obtención de refresco
+            while(coste>=saldo) {
+
+                if (saldo >= coste) {
+                    System.out.println("Aquí tiene su refesco y su cambio es de: " + calcularCambio(saldo, coste));
+                } else {
+                    System.out.println("Importe insuficiente para refresco");
+                }
+            }
+            scanner.close();
+
+    }
+}
