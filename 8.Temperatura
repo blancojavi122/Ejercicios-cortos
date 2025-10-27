@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+class Temperatura {
+
+    // Función estática que convierte de Celsius a Fahrenheit
+    static double celsiusAFahrenheit(double celsius) {
+        return (celsius * 9 / 5) + 32;
+    }
+
+    ///Recibir temperatura y calcular
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce una temperatura en grados Celsius (puede tener decimales):");
+        System.out.print("> ");
+        double celsius = sc.nextDouble(); // lee un número con decimales
+
+        double resultado = celsiusAFahrenheit(celsius);
+        System.out.println("La temperatura en Farenhait es: " + resultado);
+        sc.close();
+    }
+}
