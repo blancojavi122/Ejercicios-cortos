@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+ class ServidorProgramación {
+
+    /// RECIBIR NOMBRE Y SALUDAR
+    static void saludar (String nombre) {
+        System.out.println("¡Hola, " + nombre + "! Bienvenido al servidor de programación." );
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Introduce tu nombre: ");
+        System.out.println(">");
+        String nombreUsuario = sc.nextLine();
+
+
+        saludar(nombreUsuario);
+        sc.close();
+    }
+}
