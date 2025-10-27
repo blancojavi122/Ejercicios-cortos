@@ -1,0 +1,33 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Moneda {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("¿Cuántas veces quieres tirar la moneda?");
+        System.out.println(">");
+        int lanzamientos= sc.nextInt();
+        Random miGeneradorAleatorio = new Random();
+        int cara = 0;
+        int cruz = 0;
+        for  (int tirada = 1; tirada <= lanzamientos; tirada++) {
+            boolean haSalidoCara = miGeneradorAleatorio.nextBoolean();
+
+            /// Comprobar resultados
+        if (haSalidoCara) {
+            System.out.println("Lanzamiento " + tirada + ": Cara");
+            cara++;
+        }  else if
+        (!haSalidoCara) {
+            System.out.println("Lanzamiento " + tirada + ": Cruz");
+            cruz++;
+        }
+        }
+        /// Mostrar resultados finales
+        System.out.println("--------------------");
+        System.out.println("Caras: " + cara);
+        System.out.println("Cruzas: " + cruz);
+
+        sc.close();
+    }
+}
