@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+class Calculadora {
+
+    static int sumar(int num1, int num2) {
+        return num1 + num2;
+    }
+
+    static int restar(int num1, int num2) {
+        return num1 - num2;
+    }
+
+    static int multiplicar(int num1, int num2) {
+        return num1 * num2;
+    }
+
+    static double dividir(int num1, int num2) {
+        if (num2 == 0) {
+            System.out.println("No se puede dividir entre 0.");
+            return 0;
+        }
+        return (double) num1 / num2;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        ///Recibir Números y operación
+        System.out.print("¿Qué operación quieres hacer (+, -, *, /)? ");
+        System.out.println(">");
+        String operacion = sc.nextLine();
+
+        System.out.print("Introduce el primer número: ");
+        int num1 = sc.nextInt();
+
+        System.out.print("Introduce el segundo número: ");
+        int num2 = sc.nextInt();
+
+        double resultado = 0;
+
+        if (operacion.equals("+")) {
+            resultado = sumar(num1, num2);
+        } else if (operacion.equals("-")) {
+            resultado = restar(num1, num2);
+        } else if (operacion.equals("*")) {
+            resultado = multiplicar(num1, num2);
+        } else if (operacion.equals("/")) {
+            resultado = dividir(num1, num2);
+        } else {
+            System.out.println("Operación no válida.");
+            sc.close();
+            return;
+        }
+
+        System.out.println("El resultado es: " + resultado);
+        sc.close();
+    }
+}
