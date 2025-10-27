@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Minero {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        /// Número de bloques que se quiere picar
+        System.out.print("¿Cuántos bloques quieres picar? ");
+        System.out.println(">");
+        int numeroDeBloques = scanner.nextInt();
+
+        System.out.println("¡A picar se ha dicho!");
+
+        for (int i = 1; i <= numeroDeBloques; i++) {
+            System.out.println("Picando bloque " + i + "...");
+        }
+        System.out.println("¡Has terminado de picar " + numeroDeBloques + " bloques! ");
+
+        scanner.close();
+    }
+}
