@@ -1,0 +1,32 @@
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
+
+public class AmongUs {
+    public static void main(String[] args) {
+        //AMONG US
+        //Array
+        String[] nombres = {"Javi", "Álvaro", "Ángel", "Lois", "Mateo", "Diego"};
+
+        Random aleatorio = new Random();
+        String impostor = nombres[aleatorio.nextInt(6)];
+
+        System.out.println("Nombres de los jugadores: " + Arrays.toString(nombres));
+        System.out.println("------------------------------------");
+
+        String[] votos = new String[nombres.length];
+        //Preguntar quién es el impostor
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < votos.length; i++) {
+            System.out.println("Hola " + nombres[i] + ". ¿Quién crees que es el impostor?");
+            System.out.println(">");
+            votos[i] = sc.nextLine();
+        }
+        for (int i = 0; i < votos.length; i++) {
+            if (votos[i].equals(impostor)) {
+                System.out.println(nombres[i] + " ha acertado");
+            }
+        }
+        System.out.println("El impostor es: " + impostor);
+    }
+}
