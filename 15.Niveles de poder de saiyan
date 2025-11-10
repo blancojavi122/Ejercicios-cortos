@@ -1,0 +1,35 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class NivelesPoder {
+    public static void main(String[] args) {
+
+        // Arrays con nombres y niveles
+        String[] Saiyans = {"Goku", "Vegeta", "Gohan", "Trunks", "Raditz"};
+        int[] NivelesDePoder = {5000, 4500, 3000, 3700, 1000};
+
+        System.out.println("Lista de saiyans: " + Arrays.toString(Saiyans));
+        System.out.println("--------------------------------");
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("¿De qué saiyan quieres saber el poder? ");
+        String SaiyanDeseado = sc.nextLine();
+
+        boolean existe = false;
+
+        // Buscar el saiyan en la lista
+        for (int i = 0; i < Saiyans.length; i++) {
+            if (Saiyans[i].equalsIgnoreCase(SaiyanDeseado)) { //
+                System.out.println("El nivel de poder de " + Saiyans[i] + " es de: " + NivelesDePoder[i]);
+                existe = true;
+                break; //
+            }
+        }
+
+        // Si no se encuentra el saiyan
+        if (!existe) {
+            System.out.println("Ese Saiyan no está en la lista.");
+        }
+        sc.close();
+    }
+}
